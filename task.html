@@ -1,0 +1,101 @@
+<html>
+    <body>
+        <form >
+            <b>Username:</b><input type="text" id="uname"/>
+            <label id="1" style="color: red;"></label><br><br>
+
+            <b>Email:</b><input type="email" id="mail" placeholder="abc@gmail.com"/>
+            <label id="2" style="color: red;"></label><br><br>
+
+            <b>Password:</b><input type="password" id="pass"/>
+            <label id="3" style="color: red;"></label><br><br>
+
+            <b>Contact:</b><input type="text" id="phn"/>
+            <label id="4" style="color: red;"></label><br><br>
+
+            <b>Alternate contact:</b><input type="aphn" id="aphn"/>
+            <label id="5" style="color: red;"></label><br><br>
+
+             <b>Region:</b><input type="text" id="reg"/><br><br> 
+            <b>Address:</b><textarea id="add" rows="4"></textarea><br><br>
+            <b>Mother tongue:</b><input type="text" id="mtounge"/><br><br>
+            <b>Years of experience:</b><input type="number" id="exp"/><br><br>
+            <b>Academic background:</b><input type="text" id="bg"/><br><br>
+            <b>Display profile:</b><textarea id="pro" rows="5"></textarea><br><br>
+           
+            <b>Language Preffered:</b><br><input type="checkbox" id="exp"/>English
+            <input type="checkbox" id="exp1"/>kannada
+            <input type="checkbox" id="exp2"/>Hindi
+            <input type="checkbox" id="exp3"/>Telugu<br><br>
+     
+            <b>Region preference:</b><input type="text" /><br><br>
+            <b>region restriction:</b><input type="text" /><br><br>
+
+            <b>Preffered Mode:</b><br>
+            <b>Text1:</b>
+            <select>
+                <option>Email</option>
+                <option>Portal</option>
+            </select>
+            <br><br>
+            <b>Text2:</b>
+            <select>
+                <option>Email</option>
+                <option>Portal</option>
+            </select><br><br>
+            <b>Meeting:</b>
+            <input type="radio" name="meet"/>Google meet
+            <input type="radio" name="meet"/>Whatsapp<br><br>
+            <b>Payment:</b>
+            <select value="UPI">
+                <option>Bank transfer</option>
+                <option>Pay pal</option>
+                <option>UPI</option>
+            </select
+            ><br><br><br>
+            <button  onclick="validateForm()" type="button">SUBMIT</button>
+            </form>
+           <script>
+           function validateForm(){
+            var name=document.getElementById("uname").value
+            var email=document.getElementById("mail").value
+            var password=document.getElementById("pass").value
+            var cont=document.getElementById("phn").value
+            var acont=document.getElementById("aphn").value
+            
+            //username verification
+            var regx=/^[a-zA-Z0-9\.]{4,10}$/
+            if(!regx.test(name)){
+                document.getElementById("1").innerHTML="Invalid username"
+            }
+            //email verification
+            var regx1=/([a-zA-Z0-9\.-]+)@([a-z]+).([a-z]{2,20})$/
+            if(!regx1.test(email)){
+                 document.getElementById("2").innerHTML ="Invalid email"
+            }
+
+
+
+             //contact verification
+            var regx3=/^[7-9]\d{9}$/
+              if(!regx3.test(cont)){
+                document.getElementById("4").innerHTML ="Invalid number"
+              }
+               var regx5=/^[7-9]\d{9}?$/
+              if(!regx5.test(acont)){
+                document.getElementById("5").innerHTML ="Invalid number"
+              }
+               //password validation
+               var regx4=/^[0-9a-zA-Z]{7,10}$/
+               if(!regx4.test(password)){
+                 document.getElementById("3").innerHTML ="Invalid password"
+            }
+
+              
+            
+            
+        
+            }
+           </script>
+        </body>
+</html>
